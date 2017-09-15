@@ -1,4 +1,4 @@
-<<HaveYouSeen>>
+<HaveYouSeen>
 
 Build this project directly with gradle.
 
