@@ -36,6 +36,11 @@ public class MovieDetailFragment extends Fragment
     public static final String POSTER = "poster";
 
     /**
+     * The title.
+     */
+    public String title;
+
+    /**
      * Contains the overview.
      */
     public String overview;
@@ -71,13 +76,7 @@ public class MovieDetailFragment extends Fragment
 
         if (getArguments().containsKey(ARG_ITEM_ID))
         {
-            final Activity activity = this.getActivity();
-            CollapsingToolbarLayout appBarLayout = activity.findViewById(R.id.toolbar_layout);
-            if (appBarLayout != null)
-            {
-                appBarLayout.setTitle(getArguments().getString(ARG_TITLE));
-            }
-
+            title = getArguments().getString(ARG_TITLE);
             overview = getArguments().getString(OVERVIEW);
             date = getArguments().getString(DATE);
             genres = getArguments().getString(GENRE);
@@ -93,6 +92,13 @@ public class MovieDetailFragment extends Fragment
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState)
     {
+        final Activity activity = this.getActivity();
+        CollapsingToolbarLayout appBarLayout = activity.findViewById(R.id.toolbar_layout);
+        if (appBarLayout != null)
+        {
+            appBarLayout.setTitle(title);
+        }
+
         final View rootView = inflater.inflate(R.layout.movie_detail, container, false);
 
         ((TextView) rootView.findViewById(R.id.overview)).setText(overview);
