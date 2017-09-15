@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/movie_detail"
+    style="?android:attr/textAppearanceLarge"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:textIsSelectable="true"
+    tools:context="com.example.ray.haveyouseen.MovieDetailFragment"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+    <ImageView
+            android:layout_width="573dp"
+            android:layout_height="211dp"
+            app:srcCompat="@android:drawable/alert_light_frame"
+            android:id="@+id/poster"
+            android:layout_gravity="center"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/overview"
+            android:layout_weight="0.13" />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/genre"
+            android:layout_weight="0.14" />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/date"
+            android:layout_weight="0.14" />
+
+</LinearLayout>
